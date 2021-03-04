@@ -27,8 +27,8 @@
         const note = getUrlParameter("note") || "TARI-";
 
         const url = `tari://${network}/pubkey/${pubkey}?amount=${amount}&note=${note}`;
-        document.write("Redirecting to Tari Aurora...");
-        document.write(`<a href="${url}">${url}</a>`);
+        document.write("<p>Redirecting to Tari Aurora...</p>");
+        document.write(`<p><a href="${url}">${url}</a></p>`);
 
         window.location.href = url;
     </script>
