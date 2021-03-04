@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tari Store Redirect</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <!-- Chuck a logo in here -->
+    <noscript>Sorry this redirect requires JavaScript!</noscript>
+    <script>
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
+
+        const network = getUrlParameter("network") || "stibbons";
+        const pubkey = getUrlParameter("pubkey") || "4e06732134453e59a4254cfcaad582017eb1975a63e57bca2853c049653c0d07";
+        const amount = getUrlParameter("amount") || "0";
+        const note = getUrlParameter("note") || "TARI-";
+
+        window.location.href = `tari://${network}/pubkey/${pubkey}?amount=${amount}&note=${note}`;
+    </script>
+</body>
+
+</html>
